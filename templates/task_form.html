@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <title>Add Task</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Task</h1>
+        <div class="container-item-form">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="button-container">
+                    <button type="submit">Save</button>
+                    <button onclick="window.location.href='{% url 'task_list' %}'">Voltar para a lista</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

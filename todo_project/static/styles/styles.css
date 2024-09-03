@@ -1,0 +1,165 @@
+/* Cores da Paleta */
+:root {
+    --color-primary: #8e413a;  /* Cor principal */
+    --color-secondary: #aa6f66; /* Cor secundária */
+    --color-tertiary: #c69c93;  /* Cor terciária */
+    --color-background: #fff8eb; /* Cor de fundo */
+    --color-accent: #e3cabf;    /* Cor de destaque */
+}
+
+/* Estilizando o corpo da página */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    font-family: Arial, sans-serif;
+    height: 100vh;
+}
+
+.container {
+    background-color: var(--color-tertiary);
+    padding: 25px;
+    border-radius: 45px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.479);
+    width: 800px;
+    text-align: center;
+}
+
+/* Estilizando o cabeçalho */
+h1, h2, h3 {
+    color: var(--color-primary);
+}
+
+.button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 5px;
+}
+/* Botões */
+button {
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Links */
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+/* Lista de tarefas */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+.item-container
+ {
+    display: flex;
+    align-items: center;
+    padding-right: 25px;
+    background-color: var(--color-accent);
+    border-radius: 15px;
+    
+}
+
+.titulo-task {
+    color: var(--color-primary);
+    width: 25%;
+}
+.container-item-form
+ {
+    display: flex;
+    align-items: center;
+    padding-right: 25px;
+    background-color: var(--color-accent);
+    border-radius: 15px;
+    
+}
+/* Formulário */
+form {
+    background-color: var(--color-accent);
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+}
+
+form input[type="text"],
+form textarea,
+form select {
+    /* Reset */
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    width: 20rem;
+    padding: 1rem 4rem 1rem 1rem;
+    background: var(--color-secondary) no-repeat right 0.8em center / 1.4em,
+      linear-gradient(to left, var(--color-secondary) 3em, var(--color-secondary) 3em);
+    color: rgb(0, 0, 0);
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    /* Remove IE arrow */
+    &::-ms-expand {
+      display: none;
+    }
+    /* Remove focus outline */
+    &:focus {
+      outline: none;
+    }
+    /* <option> colors */
+    option {
+      color: inherit;
+      background-color: var(--color-secondary);
+    }
+}
+form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--color-secondary);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Links de navegação */
+nav a {
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: var(--color-secondary);
+}
+
+.description{
+    display: table-column-group;
+}

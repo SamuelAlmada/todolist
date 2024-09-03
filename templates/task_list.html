@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <ul>
+            {% for task in tasks %}
+            <div class="item-container">
+                <a href="{% url 'detalhe_task' task.id %}"><strong>{{ task.title }}</strong></a>
+                <form method="post" action="{% url 'task_update_status' task.id %}" style="display: inline;">
+                    {% csrf_token %}
+                    <div class="container-select">
+                        <div class="select">    
+                            <select name="status" onchange="this.form.submit()">
+                                {% for key, value in task.STATUS_CHOICES %}
+                                <option value="{{ key }}" {% if task.status == key %}selected{% endif %}>
+                                    {{ value }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <input type="text" name="custom_status" placeholder="Custom status" value="{{ task.custom_status }}" style="display: {% if task.status == 'custom' %}inline{% else %}none{% endif %};">
+                </form>
+                <button onclick="window.location.href='{% url 'task_delete' task.id %}'">Deletar</button>
+                <br>
+            </div>
+            <br>
+            <br>
+            {% endfor %}
+            <button onclick="window.location.href='{% url 'task_create' %}'">Adicionar Tarefa</button>
+        </ul>
+    </div>
+</body>
+</html>
